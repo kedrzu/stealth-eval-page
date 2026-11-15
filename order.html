@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beanwright | Order</title>
+<link rel="stylesheet" href="shop.css">
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6LeHciEuAAAAAJSL9I_rLsgkmxdwe5IL27QfR_dv"></script>
+</head>
+<body data-page="order">
+<header class="site-header" id="site-header"></header>
+<main id="page-main" class="container">
+<h1 class="page-title">Place an order</h1>
+<p id="order-summary"></p>
+<form class="form" id="order-form" novalidate>
+<div class="form__row"><label for="order-name">Full name</label>
+<input type="text" id="order-name" name="name" autocomplete="name" aria-describedby="order-name-error">
+<p class="field-error" id="order-name-error" role="alert" hidden></p></div>
+<div class="form__row"><label for="order-email">Email</label>
+<input type="email" id="order-email" name="email" autocomplete="email" aria-describedby="order-email-error">
+<p class="field-error" id="order-email-error" role="alert" hidden></p></div>
+<div class="form__row"><label for="order-phone">Phone</label>
+<input type="tel" id="order-phone" name="phone" autocomplete="tel" aria-describedby="order-phone-error">
+<p class="field-error" id="order-phone-error" role="alert" hidden></p></div>
+<div class="form__row"><label for="order-delivery">Delivery method</label>
+<select id="order-delivery" name="delivery" aria-describedby="order-delivery-error">
+<option value="">Choose...</option>
+<option value="courier">Courier, 2 to 4 days</option>
+<option value="express">Express, next day</option>
+<option value="pickup">Pick up in store</option>
+</select>
+<p class="field-error" id="order-delivery-error" role="alert" hidden></p></div>
+<div class="form__row"><fieldset aria-describedby="order-payment-error"><legend>Payment</legend>
+<label class="check"><input type="radio" name="payment" value="card" id="order-pay-card"> Card on delivery</label>
+<label class="check"><input type="radio" name="payment" value="transfer" id="order-pay-transfer"> Bank transfer</label>
+<label class="check"><input type="radio" name="payment" value="cash" id="order-pay-cash"> Cash on pickup</label>
+</fieldset>
+<p class="field-error" id="order-payment-error" role="alert" hidden></p></div>
+<div class="form__row"><label for="order-date">Delivery date</label>
+<input type="date" id="order-date" name="date" aria-describedby="order-date-error">
+<p class="field-error" id="order-date-error" role="alert" hidden></p></div>
+<div class="form__row"><label for="order-notes">Notes</label>
+<textarea id="order-notes" name="notes" rows="4" placeholder="Gift message, door code, anything we should know"></textarea></div>
+<div class="form__row"><label class="check"><input type="checkbox" id="order-terms" name="terms" aria-describedby="order-terms-error"> I accept the terms of sale</label>
+<p class="field-error" id="order-terms-error" role="alert" hidden></p></div>
+<button type="submit" class="btn" id="order-submit">Place order</button>
+</form>
+<section class="confirmation" id="order-confirmation" tabindex="-1" aria-labelledby="order-confirmation-title" hidden>
+<h2 id="order-confirmation-title">Thank you, your order request is in</h2>
+<p>Your reference is <strong id="order-reference"></strong>. This is a demo shop, so nothing was sent and nothing will arrive.</p>
+<p><a href="index.html" data-test="continue-shopping">Continue shopping</a></p>
+</section>
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<script src="products.js"></script>
+<script src="shop.js"></script>
+</body>
+</html>
